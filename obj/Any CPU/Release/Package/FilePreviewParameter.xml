@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="IIS Web Application Name" description="" value="usepy" tags="IisApp">
-    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\Repositories\\optimus-bug-tracker\\UniversalSEWeb\\UniversalSEWeb\\obj\\Any\ CPU\\Release\\Package\\PackageTmp$" />
-    <parameterEntry kind="ProviderPath" scope="setAcl" match="^D:\\Repositories\\optimus-bug-tracker\\UniversalSEWeb\\UniversalSEWeb\\obj\\Any\ CPU\\Release\\Package\\PackageTmp$" />
-  </parameter>
-</parameters>
