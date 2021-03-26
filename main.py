@@ -54,4 +54,4 @@ def query_example():
     #return contentData['project_name']+" "+contentData['component_name']+" "+contentData['summary']
 
 if __name__ == '__main__':
-    app.run( port=5000)
+    app.run()
