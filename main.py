@@ -15,7 +15,7 @@ cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 @app.route('/api/usepy/', methods=['GET', 'POST'])
 def query_example():
     contentData=request.get_json()
-    url="https://localhost:44300/api/Bug/GetUSERecord/"+contentData['project_name']+"/"+contentData['component_name']
+    url="https://optimusbt.azurewebsites.net/api/Bug/GetUSERecord/"+contentData['project_name']+"/"+contentData['component_name']
     response=req.get(url,verify=False)
     data=pd.DataFrame(response.json())
     my_list = []
