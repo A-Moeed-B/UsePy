@@ -52,4 +52,3 @@ def query_example():
     jsonData=json.loads(d)
     return jsonify(jsonData)
     #return contentData['project_name']+" "+contentData['component_name']+" "+contentData['summary']
-
