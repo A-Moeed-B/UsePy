@@ -31,4 +31,4 @@ jobs:
       with:
         app-name: 'pracpython'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_fa1b95ba40f54497a3403dbc9e469eb9 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_1540b13ec7fd4b56b3bcf3ba0d7b175a }}
