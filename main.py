@@ -13,16 +13,21 @@ cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 def home():
     if request.method == 'POST':
         contentData = request.get_json()
-        url = "https://optimusbt.azurewebsites.net/api/Bug/GetUSERecord/" + contentData['project_name'] + "/" +contentData['component_name']
+        url = "https://optimusbt.azurewebsites.net/api/Bug/GetUSERecord/" + contentData['project_name'] + "/" + \
+              contentData['component_name']
         response = req.get(url, verify=False)
-        data=pd.DataFrame(response.json())
+        data = pd.DataFrame(response.json())
         my_list = []
         summary = data['summary'].values
         for sent in data.index:
             filtered_sentence = remove_stopwords(data.at[sent, 'summary'])
             data.loc[sent, 'Keywords'] = filtered_sentence
+        module_url = "universal-sentence-encoder_4"
+        model = hub.load(module_url)
+        summary = data['Keywords'].values
+        sentence_embeddings = model(summary)
         d = data.to_json(orient='records')
         jsonData = json.loads(d)
         return jsonify(jsonData)
     else:
-     return "Working"
+        return "Working Python Get"
