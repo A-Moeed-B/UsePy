@@ -18,5 +18,3 @@ def home():
         return jsonify(response.json())
     else:
      return "Working"
-if __name__ == '__main__':
-  app.run()
