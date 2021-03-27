@@ -9,10 +9,6 @@ import json
 from gensim.parsing.preprocessing import remove_stopwords
 app = Flask(__name__)
 cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
-@app.route('/', methods=['GET', 'POST'])
-def home():
-    if request.method == 'POST':
-        contentData = request.get_json()
-        return contentData['project_name']
-    else:
-     return "Working"
+@app.route('/<project_name>')
+def home(project_name):
+     return project_name
