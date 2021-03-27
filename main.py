@@ -12,7 +12,7 @@ from gensim.parsing.preprocessing import remove_stopwords
 app = Flask(__name__)
 cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/api/usepy/', methods=['GET', 'POST'])
 def query_example():
     contentData=request.get_json()
     url="https://optimusbt.azurewebsites.net/api/Bug/GetUSERecord/"+contentData['project_name']+"/"+contentData['component_name']
@@ -52,4 +52,3 @@ def query_example():
     jsonData=json.loads(d)
     return jsonify(jsonData)
     #return contentData['project_name']+" "+contentData['component_name']+" "+contentData['summary']
-
