@@ -13,8 +13,7 @@ cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 def home():
     if request.method == 'POST':
         contentData = request.get_json()
-        url = "https://optimusbt.azurewebsites.net/api/Bug/GetUSERecord/" + contentData['project_name'] + "/" + \
-              contentData['component_name']
+        url = "https://optimusbt.azurewebsites.net/api/Bug/GetUSERecord/" + contentData['project_name'] + "/" +contentData['component_name']
         response = req.get(url, verify=False)
         return jsonify(response.json())
     else:
