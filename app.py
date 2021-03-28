@@ -8,7 +8,7 @@ import requests as req
 import json
 from gensim.parsing.preprocessing import remove_stopwords
 app = Flask(__name__)
-cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
+CORS(app, resources={ r'/*': {'origins': "*"}}, supports_credentials=True)
 @app.route('/', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
