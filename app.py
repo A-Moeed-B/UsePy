@@ -22,10 +22,6 @@ def home():
         for sent in data.index:
             filtered_sentence = remove_stopwords(data.at[sent, 'summary'])
             data.loc[sent, 'Keywords'] = filtered_sentence
-        module_url = "universal-sentence-encoder_4"
-        model = hub.load(module_url)
-        summary = data['Keywords'].values
-        sentence_embeddings = model(summary)
         d = data.to_json(orient='records')
         jsonData = json.loads(d)
         return jsonify(jsonData)
